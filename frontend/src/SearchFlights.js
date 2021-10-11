@@ -5,8 +5,7 @@ import AppNavbar from './AppNavbar';
 class SearchFlights extends Component {
 
     emptyItem = {
-        name: '',
-        date: '',
+        searchDate: '',
         hasData: false,
         responseData: []
     };
@@ -42,14 +41,14 @@ class SearchFlights extends Component {
             [name]: value
         })
 
-        if (!this.state.item.date.match('^\\d{4}-\\d{2}-\\d{2}$')) {
+        if (!this.state.item.searchDate.match('^\\d{4}-\\d{2}-\\d{2}$')) {
             alert('Date must be in this format (yyyy-mm-dd)')
             const {item} = this.state;
             item.hasData = false;
             return
         }
 
-        const response = await fetch('/flights/schedule/' + (this.state.item.date) , {
+        const response = await fetch('/flights/schedule/' + (this.state.item.searchDate) , {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -78,9 +77,9 @@ class SearchFlights extends Component {
                     {title}
                     <Form onSubmit={this.handleSubmit}>
                         <FormGroup>
-                            <Label for="date">Enter Date</Label>
-                            <Input type="text" name="date" id="date" value={item.date || ''}
-                                   onChange={this.handleChange} placeholder="yyyy-mm-dd" autoComplete="date"/>
+                            <Label for="searchDate">Enter Date</Label>
+                            <Input type="text" name="searchDate" id="date" value={item.searchDate || ''}
+                                   onChange={this.handleChange} placeholder="yyyy-mm-dd" autoComplete="searchDate"/>
                         </FormGroup>
                         {'\u00A0'}
                         <FormGroup>
@@ -117,7 +116,7 @@ class SearchFlights extends Component {
                             </tbody>
                         </Table>
 
-                        : <p>Search to see details</p>}
+                        : <p>Enter date to see result</p>}
                 </Container>
 
         </div>);
