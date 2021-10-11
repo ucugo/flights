@@ -1,0 +1,6 @@
+server:
+  port: 8084
+
+departure:
+  schedule:
+    file-path: /data/flights.csv
