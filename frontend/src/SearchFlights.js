@@ -82,12 +82,14 @@ class SearchFlights extends Component {
                             <Input type="text" name="date" id="date" value={item.date || ''}
                                    onChange={this.handleChange} placeholder="yyyy-mm-dd" autoComplete="date"/>
                         </FormGroup>
+                        {'\u00A0'}
                         <FormGroup>
                             <Button color="primary" type="submit">Search</Button>{' '}
                         </FormGroup>
                     </Form>
                 </Container>
-                {"        "}
+                <div/>
+                {'\u00A0'}
                 <Container>
                     {item.hasData ?
 
