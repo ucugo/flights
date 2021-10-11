@@ -1,6 +1,6 @@
 *Required*
 
-- Node Js 6.14.15
+- Node Js 6.14.15 (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - java 11
 - maven
 
